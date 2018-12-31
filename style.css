@@ -1,6 +1,5 @@
-main{
-    background-color: #b3bbc9;
-}
-h1{
-    text-align: center;
+main {
+  background-color: #b3bbc9;
+  padding-top: 75px;
+  padding-bottom: 20px;
 }
