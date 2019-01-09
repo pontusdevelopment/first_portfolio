@@ -1,5 +1,148 @@
-main {
-  background-color: #b3bbc9;
-  padding-top: 75px;
-  padding-bottom: 20px;
+/* Adding variables for primary and secondary color */
+:root{
+    --main-bg-color: #fff;
+    --main-txt-color: #000;
+    --main-border-color: rgba(0,0,0, 0.2);
+    --main-accent-color: #81cfff;
 }
+
+
+/* Resetting the CSS. Copied from https://alligator.io/css/minimal-css-reset/ */
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  
+  ol, ul {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Start of custom CSS-rules */
+  body{
+    background-color: var(--main-bg-color);
+  }
+
+  .navbar{
+    background-color: var(--main-bg-color);
+    overflow:hidden;
+    height:80px;
+    border-bottom: 1px solid var(--main-border-color);
+    transition: .5s;
+  }
+
+  .navbar a{
+    float:left;
+    display:block;
+    color: var(--main-txt-color);
+    text-align:center;
+    padding-top: 18px;
+    padding-bottom: 4px;
+    text-decoration:none;
+    text-transform: lowercase;
+    font-family: raleway;
+    font-size: 2rem;
+    transition: all 0.35s linear;
+    background: linear-gradient(
+        to right,
+        var(--main-accent-color) 0%,
+        var(--main-accent-color) 98%
+      );
+      background-size: 0px 2px;
+      background-repeat: no-repeat;
+      background-position: left 100%;
+  }
+  
+  #current{
+    color: #DADADA;
+  }
+
+  .open-slide a{
+    background: none;
+  }
+  .menu-line{
+    margin-left: 20px;
+  }
+  .open-slide:hover .menu-line{
+    stroke: #DADADA;
+    transition: .2s;
+  }
+
+  .navbar ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin: auto;
+  }
+
+  .navbar a:hover{
+    color:#DADADA;
+    background-size: 100% 2px;
+    transition: .2s;
+  }
+
+  .side-nav{
+    height:100vh;
+    width:0;
+    position:fixed;
+    z-index:2;
+    top:0;
+    left:0;
+    background-color: var(--main-bg-color);
+    border-right: solid 1px var(--main-border-color);
+    overflow-x:hidden;
+    padding-top:100px;
+    transition:0.5s;
+  }
+
+  .side-nav a{
+    padding:10px 10px 10px 30px;
+    text-decoration:none;
+    font-size:22px;
+    color: var(--main-txt-color);
+    display:block;
+    transition:0.2s;
+  }
+  .side-nav a:hover{
+    color: #DADADA;
+  }
+
+  .side-nav .menu-close{
+    position:absolute;
+    top:7px;
+    right:22px;
+    font-size:36px;
+    margin-left:50px;
+  }
+
+  #main{
+    transition:margin-left 0.5s;
+    padding:20px;
+    overflow:hidden;
+    width:100%;
+  }
+
+  @media(max-width:568px){
+    .navbar-navitems{display:none}
+    .navbar ul{
+        display: none;
+      }
+  }
+
+  @media(min-width:568px){
+    .open-slide{display:none}
+  }
