@@ -121,7 +121,7 @@ html {
   }
 
   .side-nav a:nth-child(2){
-    margin-top: 180px;
+    margin-top: 10vh;
   }
   .side-nav a:hover{
     color: var(--main-accent-color);
